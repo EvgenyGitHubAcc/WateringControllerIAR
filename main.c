@@ -59,19 +59,9 @@ int ClockInit(void)
 
 void PortInit(void)
 {
-  RCC->APB2ENR |= RCC_APB2ENR_IOPBEN;
+  RCC->APB2ENR |= RCC_APB2ENR_IOPCEN;
   GPIOC->CRH &= ~GPIO_CRH_CNF13;
   GPIOC->CRH |=  GPIO_CRH_MODE13;	
-}
-
-void PortSetHi(void)
-{
-  GPIOC->BSRR = GPIO_BSRR_BR13;
-}
-
-void PortSetLow(void)
-{
-  GPIOC->BSRR = GPIO_BSRR_BS13;
 }
 
 int main(void)
