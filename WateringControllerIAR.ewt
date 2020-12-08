@@ -2869,6 +2869,15 @@
             <name>$PROJ_DIR$\libs\cmsis\system_stm32f1xx.h</name>
         </file>
     </group>
+    <group>
+        <name>lcd_driver</name>
+        <file>
+            <name>$PROJ_DIR$\libs\lcd_driver\lcd_driver.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\libs\lcd_driver\lcd_driver.h</name>
+        </file>
+    </group>
     <file>
         <name>$PROJ_DIR$\main.c</name>
     </file>

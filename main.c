@@ -1,4 +1,5 @@
 #include "stm32f1xx.h"
+#include "lcd_driver.h"
 
 int ClockInit(void)
 {
@@ -61,13 +62,24 @@ void PortInit(void)
 {
   RCC->APB2ENR |= RCC_APB2ENR_IOPCEN;
   GPIOC->CRH &= ~GPIO_CRH_CNF13;
-  GPIOC->CRH |=  GPIO_CRH_MODE13;	
+  GPIOC->CRH |=  GPIO_CRH_MODE13;
+  
+  RCC->APB2ENR |= RCC_APB2ENR_IOPBEN;
+//  GPIOB->CRL |=  (GPIO_CRL_MODE4_1 | GPIO_CRL_MODE5_1 | GPIO_CRL_MODE6_1 | GPIO_CRL_MODE7_1);
+//  GPIOB->CRH |=  (GPIO_CRH_MODE8_1 | GPIO_CRH_MODE9_1);
 }
 
 int main(void)
 {
   ClockInit();
   PortInit();
+  
+  lcd_init();
+  lcd_out("This is fish");
+  lcd_set_xy(0,1);
+  lcd_set_state(LCD_ENABLE, CURSOR_ENABLE, BLINK);
+  
+  
   while(1)
   {
     for(volatile int i=0; i<0x40000; i++);

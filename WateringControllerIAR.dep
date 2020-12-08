@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
     <fileVersion>4</fileVersion>
-    <fileChecksum>1721256287</fileChecksum>
+    <fileChecksum>3282498467</fileChecksum>
     <configuration>
         <name>Debug</name>
         <outputs>
@@ -37,6 +37,11 @@
             <file>$PROJ_DIR$\Debug\Obj\system_stm32f1xx.xcl</file>
             <file>$PROJ_DIR$\libs\cmsis\startup_stm32f103xb.s</file>
             <file>$PROJ_DIR$\main.c</file>
+            <file>$PROJ_DIR$\libs\lcd_driver\lcd_driver.c</file>
+            <file>$PROJ_DIR$\libs\lcd_driver\lcd_driver.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\lcd_driver.__cstat.et</file>
+            <file>$PROJ_DIR$\Debug\Obj\lcd_driver.xcl</file>
+            <file>$PROJ_DIR$\Debug\Obj\lcd_driver.o</file>
         </outputs>
         <file>
             <name>[ROOT_NODE]</name>
@@ -58,7 +63,7 @@
             <inputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 24 14 2 21 16 20 12 22</file>
+                    <file> 24 36 14 2 21 16 20 12 22</file>
                 </tool>
             </inputs>
         </file>
@@ -113,7 +118,30 @@
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 7 13 10 28 8 3 5 25 18 19 0 1 9 17</file>
+                    <file> 7 13 10 28 8 3 5 25 18 19 0 1 9 17 33</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\libs\lcd_driver\lcd_driver.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 36</file>
+                </tool>
+                <tool>
+                    <name>BICOMP</name>
+                    <file> 35</file>
+                </tool>
+                <tool>
+                    <name>__cstat</name>
+                    <file> 34</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 33 7 13 10 28 8 3 5 25 18 19 0 1 9 17</file>
                 </tool>
             </inputs>
         </file>
