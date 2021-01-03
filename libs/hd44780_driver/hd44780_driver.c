@@ -1,11 +1,12 @@
-#include "lcd_driver.h"
+#include "hd44780_driver.h"
 
-void lcd_delay(void) {
-	volatile unsigned int tmpvar;
-	for (tmpvar=4000;tmpvar!=0;tmpvar--);
+inline void lcd_delay(void) {
+    volatile uint32_t tmpvar;
+    for (tmpvar=4000;tmpvar!=0;tmpvar--);
 }
 
 void lcd_init() {
+//	RCC->APB2ENR |= RCC_APB2ENR_IOPBEN;
     LCD_PORT->CRH |= LCD_PORT_CRH_S;
     LCD_PORT->CRL |= LCD_PORT_CRL_S;
     LCD_PORT->CRH &= ~(LCD_PORT_CRH_C);
@@ -16,8 +17,8 @@ void lcd_init() {
 	lcd_send(0x06,COMMAND);
 }
 
-void lcd_set_user_char(unsigned char  char_num, unsigned char  * char_data) {
-	unsigned  char i;
+void lcd_set_user_char(uint8_t char_num, uint8_t * char_data) {
+	uint8_t i;
 	lcd_send(((1<<6) | (char_num * 8) ), COMMAND);
 	for (i=0;i<=7;i++) {
 		lcd_send(char_data[i],DATA);
@@ -25,7 +26,7 @@ void lcd_set_user_char(unsigned char  char_num, unsigned char  * char_data) {
 	lcd_send((1<<7), COMMAND);
 }
 
-void lcd_set_xy(unsigned char x, unsigned char y)  {
+void lcd_set_xy(uint8_t x, uint8_t y)  {
 	if (y==0) {
 		lcd_send( ((1<<7) | (x)),COMMAND);
 	} else {
@@ -45,7 +46,7 @@ void lcd_clear(void) {
 	lcd_send(0x01,COMMAND);
 }
 
-void lcd_set_state(enum lcd_state state, enum cursor_state cur_state, enum cursor_mode cur_mode)  {
+void lcd_set_state(lcd_state state, cursor_state cur_state, cursor_mode cur_mode)  {
 	if (state==LCD_DISABLE)  {
 		lcd_send(0x08,COMMAND);
 	} else {
@@ -93,7 +94,7 @@ void lcd_set_4bit_mode(void) {
 
 }
 
-void lcd_send(unsigned char byte,enum dat_or_comm dc)  {
+void lcd_send(uint8_t byte, dat_or_comm dc)  {
 
 	LCD_PORT->BSRR=(LCD_DB7_BC | LCD_DB6_BC | LCD_DB5_BC | LCD_DB4_BC | LCD_CD_BC | LCD_EN_BC);
 

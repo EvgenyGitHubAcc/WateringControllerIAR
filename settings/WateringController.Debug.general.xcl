@@ -1,0 +1,15 @@
+"C:\Tools\IAR Systems\Embedded Workbench 8.4\arm\bin\armproc.dll" 
+
+"C:\Tools\IAR Systems\Embedded Workbench 8.4\arm\bin\armstlink2.dll" 
+
+"D:\Temp\Prog\ARM-projects\WateringControllerARM\Debug\Exe\WateringController.out" 
+
+--plugin="C:\Tools\IAR Systems\Embedded Workbench 8.4\arm\bin\armbat.dll" 
+
+--device_macro="C:\Tools\IAR Systems\Embedded Workbench 8.4\arm\config\debugger\ST\STM32F1xx.dmac" 
+
+--flash_loader="C:\Tools\IAR Systems\Embedded Workbench 8.4\arm\config\flashloader\ST\FlashSTM32F10xx8.board" 
+
+
+
+

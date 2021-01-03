@@ -349,9 +349,9 @@
                 </option>
                 <option>
                     <name>CCIncludePath2</name>
-                    <state>$PROJ_DIR$\</state>
+                    <state>$PROJ_DIR$\src\</state>
                     <state>$PROJ_DIR$\libs\cmsis\</state>
-                    <state>$PROJ_DIR$\libs\lcd_driver\</state>
+                    <state>$PROJ_DIR$\libs\hd44780_driver\</state>
                 </option>
                 <option>
                     <name>CCStdIncCheck</name>
@@ -367,7 +367,7 @@
                 </option>
                 <option>
                     <name>CCOptLevel</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>CCOptStrategy</name>
@@ -376,7 +376,7 @@
                 </option>
                 <option>
                     <name>CCOptLevelSlave</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>CompilerMisraRules98</name>
@@ -659,7 +659,7 @@
                 </option>
                 <option>
                     <name>OOCOutputFile</name>
-                    <state>WateringControllerIAR.srec</state>
+                    <state></state>
                 </option>
                 <option>
                     <name>OOCCommandLineProducer</name>
@@ -778,7 +778,7 @@
                 </option>
                 <option>
                     <name>IlinkIcfFile</name>
-                    <state>$TOOLKIT_DIR$\config\linker\ST\stm32f103x8.icf</state>
+                    <state></state>
                 </option>
                 <option>
                     <name>IlinkIcfFileSlave</name>
@@ -838,7 +838,7 @@
                 </option>
                 <option>
                     <name>IlinkProgramEntryLabel</name>
-                    <state>__iar_program_start</state>
+                    <state></state>
                 </option>
                 <option>
                     <name>DoFill</name>
@@ -1011,7 +1011,7 @@
                 </option>
                 <option>
                     <name>IlinkTrustzoneImportLibraryOut</name>
-                    <state>WateringControllerIAR_import_lib.o</state>
+                    <state>###Unitialized###</state>
                 </option>
                 <option>
                     <name>OILinkExtraOption</name>
@@ -2127,7 +2127,7 @@
             <name>$PROJ_DIR$\libs\cmsis\cmsis_compiler.h</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\libs\cmsis\cmsis_iccarm.h</name>
+            <name>$PROJ_DIR$\libs\cmsis\cmsis_gcc.h</name>
         </file>
         <file>
             <name>$PROJ_DIR$\libs\cmsis\cmsis_version.h</name>
@@ -2152,15 +2152,21 @@
         </file>
     </group>
     <group>
-        <name>lcd_driver</name>
+        <name>hd44780_driver</name>
         <file>
-            <name>$PROJ_DIR$\libs\lcd_driver\lcd_driver.c</name>
+            <name>$PROJ_DIR$\libs\hd44780_driver\hd44780_driver.c</name>
         </file>
         <file>
-            <name>$PROJ_DIR$\libs\lcd_driver\lcd_driver.h</name>
+            <name>$PROJ_DIR$\libs\hd44780_driver\hd44780_driver.h</name>
         </file>
     </group>
     <file>
-        <name>$PROJ_DIR$\main.c</name>
+        <name>$PROJ_DIR$\src\definitions.h</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\src\main.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\src\main.h</name>
     </file>
 </project>
